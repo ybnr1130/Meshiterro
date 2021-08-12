@@ -1203,3 +1203,65 @@ Processing by PostImagesController#show as HTML
 Completed 200 OK in 67ms (Views: 57.0ms | ActiveRecord: 1.3ms)
 
 
+Started GET "/" for 180.46.181.95 at 2021-08-12 07:05:19 +0000
+Cannot render console from 180.46.181.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 523ms (Views: 503.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 180.46.181.95 at 2021-08-12 07:05:21 +0000
+Cannot render console from 180.46.181.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 79ms (Views: 76.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/1" for 180.46.181.95 at 2021-08-12 07:05:34 +0000
+Cannot render console from 180.46.181.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPostImage Load (0.2ms)[0m  [1m[34mSELECT  "post_images".* FROM "post_images" WHERE "post_images"."user_id" = ? ORDER BY "post_images"."id" DESC LIMIT ? OFFSET ?[0m  [["user_id", 1], ["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/views/users/show.html.erb:7
+  Rendered users/show.html.erb within layouts/application (24.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 108ms (Views: 76.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/attachments/5bf62ce531c3d86b8dd3a7af86eaa1c031a7ebcf/store/99e65320b78dd51fb8e7fc2ae441dce9428bbc52cd394e9c2002fe8b614f/image" for 180.46.181.95 at 2021-08-12 07:05:34 +0000
+Cannot render console from 180.46.181.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/attachments/2151528a09aaab2b53f3a9bdf92daf9271467e1d/store/7bc9f2758f6383ebd8491a1b2fac24d984243a2c8560a3cf64ac13680c33/image" for 180.46.181.95 at 2021-08-12 07:05:34 +0000
+Cannot render console from 180.46.181.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Refile::App: [2021-08-12 07:05:34 +0000] GET "/2151528a09aaab2b53f3a9bdf92daf9271467e1d/store/7bc9f2758f6383ebd8491a1b2fac24d984243a2c8560a3cf64ac13680c33/image" 200 8.9ms
+
+Refile::App: [2021-08-12 07:05:34 +0000] GET "/5bf62ce531c3d86b8dd3a7af86eaa1c031a7ebcf/store/99e65320b78dd51fb8e7fc2ae441dce9428bbc52cd394e9c2002fe8b614f/image" 200 17.7ms
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddProfileImageIdToUsers (20210812080602)
+  [1m[35m (1.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "users" ADD "profile_image_id" varchar[0m
+  ↳ db/migrate/20210812080602_add_profile_image_id_to_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210812080602"]]
+  ↳ bin/rails:9
+  [1m[35m (6.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
